@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Container styling */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Logo section */
+        .logo {
+            margin-top: 20px;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Portfolio description */
+        .description {
+            margin: 20px 0;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+/* Project section */
+.projects-section {
+    margin: 20px 0;
+    text-align: center; /* Center align the section title */
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center; /* Centers the project boxes horizontally */
+    flex-wrap: wrap; /* Allows wrapping if there are more boxes */
+    gap: 20px; /* Adds space between project boxes */
+}
+
+.project-box {
+    background-color: #444;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.project-box h3 {
+    margin-top: 0;
+}
+
+.project-box p {
+    font-size: 14px;
+}
+
+.project-box a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.project-box a:hover {
+    background-color: #666;
+}
+
+
+        /* Members section */
+        .members-section {
+            margin: 40px 0;
+        }
+
+        .member-box {
+            display: inline-block;
+            background-color: #444;
+            width: 150px;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .member-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .project-box {
+                width: 150px;
+            }
+
+            .member-box {
+                width: 120px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .project-box {
+                width: 100px;
+                padding: 10px;
+            }
+
+            .member-box {
+                width: 100px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Section -->
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <!-- Portfolio Description -->
+    <div class="container">
+        <div class="description">
+            <h2>My Portfolio</h2>
+            <p>This portfolio is a reflection of my vision and project ideas. Below, you can explore my various projects and get to know the team behind it all.</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects-section">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project-box">
+                    <h3>Project 1</h3>
+                    <p>A brief description of project 1 goes here.</p>
+                    <a href="#">View Project</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-box">
+                    <h3>Project 2</h3>
+                    <p>A brief description of project 2 goes here.</p>
+                    <a href="#">View Project</a>
+                </div>
+
+                <!-- Add more projects similarly -->
+            </div>
+        </div>
+
+        <!-- Members Section -->
+        <div class="members-section">
+            <h2>Our Team</h2>
+            <div class="members-container">
+                <!-- Member 1 -->
+                <div class="member-box">
+                    <img src="member1.jpg" alt="Member 1">
+                    <p>Member 1</p>
+                    <p>Short intro here</p>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="member-box">
+                    <img src="member2.jpg" alt="Member 2">
+                    <p>Member 2</p>
+                    <p>Short intro here</p>
+                </div>
+
+                <!-- Add more members similarly -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional JS for horizontal scroll for projects if needed
+        document.querySelector('.projects-container').addEventListener('wheel', (e) => {
+            if (e.deltaY > 0) {
+                e.target.scrollBy({ left: 100, behavior: 'smooth' });
+            } else {
+                e.target.scrollBy({ left: -100, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
