@@ -1,205 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Code and Weed | Hacking Community Portfolio</title>
     <style>
-        body {
+        /* General Styling */
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1c1c1c;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        /* Container styling */
-        .container {
-            width: 100%;
-            max-width: 1200px;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            color: #00ff99;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #00ff99;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #00cc77;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            background-color: #1a1a1a;
             text-align: center;
-            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* Logo section */
-        .logo {
-            margin-top: 20px;
-        }
-
-        .logo img {
-            width: 150px;
-            height: auto;
-        }
-
-        /* Portfolio description */
-        .description {
-            margin: 20px 0;
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-/* Project section */
-.projects-section {
-    margin: 20px 0;
-    text-align: center; /* Center align the section title */
-}
-
-.projects-container {
-    display: flex;
-    justify-content: center; /* Centers the project boxes horizontally */
-    flex-wrap: wrap; /* Allows wrapping if there are more boxes */
-    gap: 20px; /* Adds space between project boxes */
-}
-
-.project-box {
-    background-color: #444;
-    padding: 20px;
-    margin: 10px;
-    width: 200px;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-.project-box h3 {
-    margin-top: 0;
-}
-
-.project-box p {
-    font-size: 14px;
-}
-
-.project-box a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #555;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.project-box a:hover {
-    background-color: #666;
-}
-
-
-        /* Members section */
-        .members-section {
-            margin: 40px 0;
-        }
-
-        .member-box {
-            display: inline-block;
-            background-color: #444;
-            width: 150px;
-            margin: 10px;
-            padding: 20px;
-            border-radius: 50%;
-            text-align: center;
-        }
-
-        .member-box img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
+        header h1 {
+            font-size: 2.5em;
+            color: #00ff99;
             margin-bottom: 10px;
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .project-box {
-                width: 150px;
-            }
-
-            .member-box {
-                width: 120px;
-            }
+        nav {
+            margin-top: 10px;
         }
 
-        @media screen and (max-width: 480px) {
-            .project-box {
-                width: 100px;
-                padding: 10px;
-            }
+        nav a {
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
 
-            .member-box {
-                width: 100px;
-                padding: 10px;
-            }
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            text-align: center;
+        }
+
+        .portfolio-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #00ff99;
+        }
+
+        .description {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .description p {
+            font-size: 1.2em;
+            color: #ddd;
+        }
+
+        /* Projects Section */
+        .projects {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .project-box {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-box h3 {
+            color: #00ff99;
+            margin-bottom: 15px;
+        }
+
+        .project-box p {
+            font-size: 1.1em;
+            color: #bbb;
+            margin-bottom: 15px;
+        }
+
+        .project-box a {
+            padding: 10px 20px;
+            background-color: #00cc77;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            text-shadow: 0 0 5px #00ff99;
+            box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+        }
+
+        /* Team Section */
+        .team-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .team-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #00ff99;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            width: 220px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            color: #00ff99;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            color: #bbb;
+            font-size: 1em;
+        }
+
+        .team-member a {
+            padding: 8px 15px;
+            background-color: #00cc77;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 30px;
+            text-align: center;
+            color: #00ff99;
+            margin-top: 60px;
         }
     </style>
 </head>
-<body>
-    <!-- Logo Section -->
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-    </div>
 
-    <!-- Portfolio Description -->
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Code and Weed</h1>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="#team">Team</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
     <div class="container">
-        <div class="description">
-            <h2>My Portfolio</h2>
-            <p>This portfolio is a reflection of my vision and project ideas. Below, you can explore my various projects and get to know the team behind it all.</p>
-        </div>
+        <!-- Portfolio Description -->
+        <section class="portfolio-section">
+            <h2>Welcome to Our Portfolio</h2>
+            <div class="description">
+                <p>Code and Weed is a community-driven platform focused on hacking, cybersecurity insights, and knowledge sharing. We push the boundaries of online security while also educating people on how to protect themselves from black-hat hackers.</p>
+            </div>
+        </section>
 
         <!-- Projects Section -->
-        <div class="projects-section">
-            <h2>Projects</h2>
-            <div class="projects-container">
-                <!-- Project 1 -->
+        <section id="projects">
+            <h2>Our Projects</h2>
+            <div class="projects">
                 <div class="project-box">
-                    <h3>Project 1</h3>
-                    <p>A brief description of project 1 goes here.</p>
+                    <h3>Vulnerability Detection</h3>
+                    <p>Exploring top vulnerability scanning tools for enterprise-level protection.</p>
                     <a href="#">View Project</a>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="project-box">
-                    <h3>Project 2</h3>
-                    <p>A brief description of project 2 goes here.</p>
+                    <h3>Network Security</h3>
+                    <p>Implementing secure network infrastructures for large organizations.</p>
                     <a href="#">View Project</a>
                 </div>
 
-                <!-- Add more projects similarly -->
+                <div class="project-box">
+                    <h3>Web Penetration Testing</h3>
+                    <p>Developing tools for advanced web application penetration testing.</p>
+                    <a href="#">View Project</a>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Members Section -->
-        <div class="members-section">
-            <h2>Our Team</h2>
-            <div class="members-container">
-                <!-- Member 1 -->
-                <div class="member-box">
-                    <img src="member1.jpg" alt="Member 1">
-                    <p>Member 1</p>
-                    <p>Short intro here</p>
+        <!-- Team Section -->
+        <section id="team" class="team-section">
+            <h2>Meet the Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" alt="Member 1">
+                    <h3>Member 1</h3>
+                    <p>Lead Hacker</p>
+                    <a href="#">View Profile</a>
                 </div>
 
-                <!-- Member 2 -->
-                <div class="member-box">
-                    <img src="member2.jpg" alt="Member 2">
-                    <p>Member 2</p>
-                    <p>Short intro here</p>
+                <div class="team-member">
+                    <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" alt="Member 2">
+                    <h3>Member 2</h3>
+                    <p>Network Security Specialist</p>
+                    <a href="#">View Profile</a>
                 </div>
 
-                <!-- Add more members similarly -->
+                <div class="team-member">
+                    <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" alt="Member 3">
+                    <h3>Member 3</h3>
+                    <p>Penetration Tester</p>
+                    <a href="#">View Profile</a>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 
-    <script>
-        // Optional JS for horizontal scroll for projects if needed
-        document.querySelector('.projects-container').addEventListener('wheel', (e) => {
-            if (e.deltaY > 0) {
-                e.target.scrollBy({ left: 100, behavior: 'smooth' });
-            } else {
-                e.target.scrollBy({ left: -100, behavior: 'smooth' });
-            }
-        });
-    </script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Code and Weed | All rights reserved</p>
+    </footer>
 </body>
+
 </html>
